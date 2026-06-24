@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prachetas Singh – Full-Stack Developer & Computer Science Student. Portfolio showcasing projects, skills, and achievements." />
+  <meta name="keywords" content="Prachetas Singh, Full Stack Developer, React, Java, Node.js, Portfolio, GLA University" />
+  <meta property="og:title" content="Prachetas Singh | Full-Stack Developer" />
+  <meta property="og:description" content="Passionate full-stack developer building modern web applications with React, Java, and Node.js." />
+  <title>Prachetas Singh | Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ───── CURSOR GLOW ───── -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ───── PARTICLES BACKGROUND ───── -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ───── NAV ───── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="navLogo">
+        <span class="logo-bracket">&lt;</span>PS<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="mailto:singhprachetas3@gmail.com" class="nav-cta" id="navCta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ───── HERO ───── -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting" id="heroGreeting">Hello, I'm</p>
+        <h1 class="hero-name" id="heroName">Prachetas Singh</h1>
+        <div class="hero-title-wrapper">
+          <span class="hero-title-prefix">I build</span>
+          <span class="hero-typewriter" id="typewriter"></span>
+          <span class="typewriter-cursor">|</span>
+        </div>
+        <p class="hero-bio" id="heroBio">
+          A passionate <strong>Full-Stack Developer</strong> pursuing B.Tech in Computer Science at GLA University, Mathura. 
+          I craft elegant web experiences with modern tech stacks.
+        </p>
+        <div class="hero-actions" id="heroActions">
+          <a href="#projects" class="btn btn-primary" id="viewWorkBtn">View My Work</a>
+          <a href="#contact" class="btn btn-outline" id="contactBtn">Get in Touch</a>
+        </div>
+        <div class="hero-socials" id="heroSocials">
+          <a href="https://www.linkedin.com/in/prachetas-singh-a28437319/" target="_blank" rel="noopener" class="social-link" id="linkedinLink" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/prachetass1" target="_blank" rel="noopener" class="social-link" id="githubLink" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+
+        </div>
+      </div>
+      <div class="hero-visual" id="heroVisual">
+        <div class="avatar-ring">
+          <div class="avatar-ring-outer"></div>
+          <div class="avatar-ring-middle"></div>
+          <div class="avatar-img-wrap">
+            <img src="profile_avatar.png" alt="Prachetas Singh – Full-Stack Developer" class="avatar-img" id="avatarImg" />
+          </div>
+        </div>
+        <div class="floating-badge badge-java" id="badgeJava">
+          <span>☕</span> Java
+        </div>
+        <div class="floating-badge badge-react" id="badgeReact">
+          <span>⚛️</span> React
+        </div>
+        <div class="floating-badge badge-node" id="badgeNode">
+          <span>🟢</span> Node.js
+        </div>
+        <div class="floating-badge badge-sql" id="badgeSql">
+          <span>🗄️</span> SQL
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" id="scrollHint">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ───── ABOUT ───── -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text" id="aboutText">
+          <p>I'm <strong>Prachetas Singh</strong>, a B.Tech Computer Science student at <strong>GLA University, Mathura</strong> (graduating June 2027, CGPA 70.3%). I'm deeply passionate about building scalable web applications and solving complex problems through code.</p>
+          <p>My journey in tech started with curiosity and has grown into a solid skill set spanning both frontend and backend development. I love the entire development lifecycle — from designing intuitive UIs to architecting robust server-side systems.</p>
+          <p>When I'm not coding, you'll find me competing in coding challenges on <strong>LeetCode</strong> or exploring new technologies through self-learning.</p>
+          <div class="about-stats">
+            <div class="stat-card" id="stat1">
+              <span class="stat-num">1</span>
+              <span class="stat-label">Major Project</span>
+            </div>
+            <div class="stat-card" id="stat2">
+              <span class="stat-num">2</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+            <div class="stat-card" id="stat3">
+              <span class="stat-num">70.3%</span>
+              <span class="stat-label">B.Tech CGPA</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-edu" id="aboutEdu">
+          <h3 class="subsection-title">Education</h3>
+          <div class="edu-timeline">
+            <div class="edu-item" id="edu1">
+              <div class="edu-icon">🎓</div>
+              <div class="edu-details">
+                <h4>B.Tech – Computer Science</h4>
+                <p class="edu-school">GLA University, Mathura</p>
+                <div class="edu-meta">
+                  <span class="edu-grade">70.3%</span>
+                  <span class="edu-year">2023 – June 2027</span>
+                </div>
+              </div>
+            </div>
+            <div class="edu-item" id="edu2">
+              <div class="edu-icon">📚</div>
+              <div class="edu-details">
+                <h4>Intermediate (12th)</h4>
+                <p class="edu-school">M.V.P.S School, Bareilly</p>
+                <div class="edu-meta">
+                  <span class="edu-grade">72%</span>
+                  <span class="edu-year">May 2022</span>
+                </div>
+              </div>
+            </div>
+            <div class="edu-item" id="edu3">
+              <div class="edu-icon">🏫</div>
+              <div class="edu-details">
+                <h4>High School (10th)</h4>
+                <p class="edu-school">G.R.M School, Bareilly</p>
+                <div class="edu-meta">
+                  <span class="edu-grade">88.8%</span>
+                  <span class="edu-year">May 2020</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── SKILLS ───── -->
+  <section class="section section-dark" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">Skills & Expertise</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category" id="skillTech">
+          <h3 class="skill-cat-title"><span class="cat-icon">💻</span> Technical Skills</h3>
+          <div class="skill-pills">
+            <div class="skill-pill" data-level="85" id="skillJava">
+              <div class="pill-header">
+                <span class="pill-icon">☕</span>
+                <span class="pill-name">Java</span>
+                <span class="pill-percent">85%</span>
+              </div>
+              <div class="pill-bar"><div class="pill-fill" style="--target: 85%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="80" id="skillReact">
+              <div class="pill-header">
+                <span class="pill-icon">⚛️</span>
+                <span class="pill-name">React</span>
+                <span class="pill-percent">80%</span>
+              </div>
+              <div class="pill-bar"><div class="pill-fill" style="--target: 80%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="82" id="skillHtml">
+              <div class="pill-header">
+                <span class="pill-icon">🌐</span>
+                <span class="pill-name">HTML & CSS</span>
+                <span class="pill-percent">82%</span>
+              </div>
+              <div class="pill-bar"><div class="pill-fill" style="--target: 82%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="75" id="skillNode">
+              <div class="pill-header">
+                <span class="pill-icon">🟢</span>
+                <span class="pill-name">Node.js</span>
+                <span class="pill-percent">75%</span>
+              </div>
+              <div class="pill-bar"><div class="pill-fill" style="--target: 75%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="70" id="skillSql">
+              <div class="pill-header">
+                <span class="pill-icon">🗄️</span>
+                <span class="pill-name">SQL / MySQL</span>
+                <span class="pill-percent">70%</span>
+              </div>
+              <div class="pill-bar"><div class="pill-fill" style="--target: 70%"></div></div>
+            </div>
+            <div class="skill-pill" data-level="78" id="skillSpring">
+              <div class="pill-header">
+                <span class="pill-icon">🍃</span>
+                <span class="pill-name">Spring Boot</span>
+                <span class="pill-percent">78%</span>
+              </div>
+              <div class="pill-bar"><div class="pill-fill" style="--target: 78%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category" id="skillPro">
+          <h3 class="skill-cat-title"><span class="cat-icon">🤝</span> Professional Skills</h3>
+          <div class="pro-skills">
+            <div class="pro-skill-item" id="proSkill1">
+              <div class="pro-skill-icon">💬</div>
+              <div class="pro-skill-text">
+                <h4>Effective Communication</h4>
+                <p>Articulating complex ideas clearly across teams and stakeholders</p>
+              </div>
+            </div>
+            <div class="pro-skill-item" id="proSkill2">
+              <div class="pro-skill-icon">👥</div>
+              <div class="pro-skill-text">
+                <h4>Team Work</h4>
+                <p>Collaborating effectively in agile, cross-functional environments</p>
+              </div>
+            </div>
+            <div class="pro-skill-item" id="proSkill3">
+              <div class="pro-skill-icon">⏰</div>
+              <div class="pro-skill-text">
+                <h4>Time Management</h4>
+                <p>Prioritizing tasks efficiently to consistently meet deadlines</p>
+              </div>
+            </div>
+          </div>
+          <div class="tech-stack-bubble">
+            <h3 class="skill-cat-title" style="margin-bottom: 1rem"><span class="cat-icon">🔧</span> Tech Stack</h3>
+            <div class="tech-bubbles" id="techBubbles">
+              <span class="tech-bubble">Java</span>
+              <span class="tech-bubble">React.js</span>
+              <span class="tech-bubble">Node.js</span>
+              <span class="tech-bubble">Spring Boot</span>
+              <span class="tech-bubble">MySQL</span>
+              <span class="tech-bubble">HTML5</span>
+              <span class="tech-bubble">CSS3</span>
+              <span class="tech-bubble">JavaScript</span>
+              <span class="tech-bubble">REST API</span>
+              <span class="tech-bubble">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── PROJECTS ───── -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I've Built</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card featured-project" id="projectBasket">
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <div class="project-icon-wrap">
+              <span class="project-icon">🛒</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/prachetass1" target="_blank" rel="noopener" class="project-link-btn" id="projectBasketGithub" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-date">June 2025 – July 2025</div>
+          <h3 class="project-title">BasketBuddy</h3>
+          <p class="project-subtitle">Quick Commerce E-Commerce Platform</p>
+          <p class="project-desc">
+            A full-stack e-commerce application built with Java Spring Boot, React.js, and MySQL. Features secure authentication, REST APIs, and complete CRUD operations for a seamless shopping experience.
+          </p>
+          <ul class="project-highlights">
+            <li>🎨 Designed modern frontend using React, HTML, and CSS</li>
+            <li>🔌 Developed RESTful APIs using Node.js</li>
+            <li>🔐 Implemented secure authentication & authorization</li>
+            <li>🗃️ Full CRUD operations with MySQL database</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">React.js</span>
+            <span class="tag">Java Spring Boot</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">REST API</span>
+          </div>
+        </div>
+        <div class="project-card" id="projectGradeManager">
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <div class="project-icon-wrap">
+              <span class="project-icon">📊</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/prachetass1" target="_blank" rel="noopener" class="project-link-btn" id="projectGradeGithub" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-date">2025</div>
+          <h3 class="project-title">GradeTrack</h3>
+          <p class="project-subtitle">Student Grade Manager &ndash; C# Console Application</p>
+          <p class="project-desc">
+            A structured C# console application that manages student records, calculates GPA, and generates performance reports. Built using core OOP principles with persistent file storage.
+          </p>
+          <ul class="project-highlights">
+            <li>🧩 Designed with OOP &mdash; Student, Subject &amp; Report classes with inheritance</li>
+            <li>📁 Persists records to a local <code style="color:var(--accent-3);font-family:var(--font-mono);font-size:.82rem">.txt</code> file using StreamReader / StreamWriter</li>
+            <li>🔢 Calculates GPA, letter grades (A&ndash;F), and class average automatically</li>
+            <li>🔍 Menu-driven CLI to search, add, update, and delete records</li>
+            <li>⚠️ Robust input validation with try-catch exception handling</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">C#</span>
+            <span class="tag">.NET Console</span>
+            <span class="tag">OOP</span>
+            <span class="tag">File I/O</span>
+            <span class="tag">Exception Handling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── EXPERIENCE ───── -->
+  <section class="section section-dark" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Journey</span>
+        <h2 class="section-title">Experience & Training</h2>
+      </div>
+      <div class="timeline" id="experienceTimeline">
+        <div class="timeline-item" id="exp1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-top">
+              <div>
+                <h3 class="timeline-role">Trainee</h3>
+                <p class="timeline-company">GLA University, Mathura</p>
+                <p class="timeline-program">Job Oriented Value-Added Course</p>
+              </div>
+              <span class="timeline-date">June 2025 – July 2025</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Learned fundamentals of Java, HTML, CSS, and JavaScript</li>
+              <li>Built responsive frontend web applications from scratch</li>
+              <li>Gained hands-on experience with modern web development practices</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag tag-sm">Java</span>
+              <span class="tag tag-sm">HTML/CSS</span>
+              <span class="tag tag-sm">JavaScript</span>
+              <span class="tag tag-sm">Web Development</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item" id="exp2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-top">
+              <div>
+                <h3 class="timeline-role">Self-Learning</h3>
+                <p class="timeline-company">Online Platforms</p>
+                <p class="timeline-program">Continuous Web Development Learning</p>
+              </div>
+              <span class="timeline-date">Ongoing</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Actively participate in weekly LeetCode coding challenges</li>
+              <li>Self-learning web development through online courses and tutorials</li>
+              <li>Continuously expanding knowledge in full-stack technologies</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag tag-sm">LeetCode</span>
+              <span class="tag tag-sm">Problem Solving</span>
+              <span class="tag tag-sm">DSA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── ACHIEVEMENTS ───── -->
+  <section class="section" id="achievements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Milestones</span>
+        <h2 class="section-title">Achievements & Certifications</h2>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievement-card" id="ach1">
+          <div class="ach-glow"></div>
+          <div class="ach-icon">🏆</div>
+          <div class="ach-body">
+            <h3>Full-Stack Developer Certificate</h3>
+            <p class="ach-issuer">KVCH Pvt. Ltd.</p>
+            <p class="ach-desc">Completed comprehensive full-stack development training covering modern web technologies, backend development, and deployment practices.</p>
+          </div>
+          <div class="ach-badge">Certified</div>
+        </div>
+        <div class="achievement-card" id="ach2">
+          <div class="ach-glow"></div>
+          <div class="ach-icon">🐍</div>
+          <div class="ach-body">
+            <h3>Python Fundamentals Certificate</h3>
+            <p class="ach-issuer">Infosys Springboard</p>
+            <p class="ach-desc">Certified in the basics of Python programming including data structures, algorithms, and foundational programming concepts.</p>
+          </div>
+          <div class="ach-badge">Certified</div>
+        </div>
+        <div class="achievement-card" id="ach3">
+          <div class="ach-glow"></div>
+          <div class="ach-icon">⚡</div>
+          <div class="ach-body">
+            <h3>LeetCode Weekly Challenger</h3>
+            <p class="ach-issuer">LeetCode Platform</p>
+            <p class="ach-desc">Consistently participates in weekly coding challenges, honing algorithmic problem-solving skills and competitive programming abilities.</p>
+          </div>
+          <div class="ach-badge">Active</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── CONTACT ───── -->
+  <section class="section section-dark" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Let's Connect</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">I'm always open to new opportunities, collaborations, or just a friendly chat about tech!</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" id="contactInfo">
+          <div class="contact-item" id="contactEmail">
+            <div class="contact-icon">📧</div>
+            <div class="contact-text">
+              <span class="contact-label">Email</span>
+              <a href="mailto:singhprachetas3@gmail.com" class="contact-value">singhprachetas3@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item" id="contactLocation">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Mathura, Uttar Pradesh, India</span>
+            </div>
+          </div>
+          <div class="contact-item" id="contactLinkedin">
+            <div class="contact-icon">💼</div>
+            <div class="contact-text">
+              <span class="contact-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/prachetas-singh-a28437319/" target="_blank" rel="noopener" class="contact-value">prachetas-singh-a28437319</a>
+            </div>
+          </div>
+          <div class="contact-item" id="contactGithub">
+            <div class="contact-icon">🐙</div>
+            <div class="contact-text">
+              <span class="contact-label">GitHub</span>
+              <a href="https://github.com/prachetass1" target="_blank" rel="noopener" class="contact-value">prachetass1</a>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="formName" class="form-label">Your Name</label>
+            <input type="text" id="formName" name="name" class="form-input" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="formEmail" class="form-label">Your Email</label>
+            <input type="email" id="formEmail" name="email" class="form-input" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="formSubject" class="form-label">Subject</label>
+            <input type="text" id="formSubject" name="subject" class="form-input" placeholder="Collaboration / Opportunity / Hello" />
+          </div>
+          <div class="form-group">
+            <label for="formMessage" class="form-label">Message</label>
+            <textarea id="formMessage" name="message" class="form-input form-textarea" rows="5" placeholder="Hi Prachetas, I'd love to..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="formSubmit">
+            <span>Send Message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/></svg>
+          </button>
+          <div class="form-success" id="formSuccess" style="display:none">
+            ✅ Thanks! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── FOOTER ───── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>PS<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-copy">© 2025 Prachetas Singh. Crafted with ❤️ and ☕</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/prachetas-singh-a28437319/" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">in</a>
+          <a href="https://github.com/prachetass1" target="_blank" rel="noopener" class="footer-social" aria-label="GitHub">gh</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
