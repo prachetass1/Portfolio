@@ -11,7 +11,7 @@
 
 ## 🌐 Live Demo
 
-🔗 **[prachetass1.Portfolio](https://portfolio-one-bay-jm8kookxrf.vercel.app/)**
+🔗 **[Portfolio](https://portfolio-one-bay-jm8kookxrf.vercel.app/)**
 
 ---
 
